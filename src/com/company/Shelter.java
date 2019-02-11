@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Shelter {
 
@@ -8,6 +9,9 @@ public class Shelter {
     private Animal foundAnimal;
     private IDNumber idNumber = new IDNumber();
     private int bank;
+    private Scanner scanner = new Scanner(System.in);
+    private String userInput;
+    private int userInputInt;
 
 
     public Shelter() {
@@ -15,26 +19,68 @@ public class Shelter {
         this.bank = 150000;
     }
 
-    public void decreaseBy5000(){
-        bank-=5000;
+    public void decreaseBy5000() {
+        bank -= 5000;
         System.out.println("The bank balance is:  " + this.bank);
     }
 
-    public void addBy5000(){
-        bank+=5000;
+    public void addBy5000() {
+        bank += 5000;
         System.out.println("The bank balance is:  " + this.bank);
     }
 
-    //TODO Work on editing animal.
-//    public void editAnimal(Animal animal){
-//        System.out.println("Would you like");
-//
-//        Animal foundAnimal
-//    }
+    public void editAnimal(Animal animal) {
+        animal.printDetails();
+        System.out.println("what value would you like to edit of this animal.\n" +
+                "[1] Name\n" +
+                "[2] Breed\n" +
+                "[3] Color\n" +
+                "[4] Age\n" +
+                "[5] Status\n");
+        userInput = scanner.nextLine();
 
-    public void animalsByStatus(String status){
+        switch (userInput) {
+            case "1":
+                System.out.println("What would you like the new name to be?");
+                userInput = scanner.nextLine();
+                animal.setName(userInput);
+                System.out.println("The animal has been updated.  The new name is:  " + animal.getName());
+                break;
+            case "2":
+                System.out.println("What is the breed of the animal?");
+                userInput = scanner.nextLine();
+                animal.setBreed(userInput);
+                System.out.println("The animal has been updated.  The new breed is:  " + animal.getBreed());
+                break;
+            case "3":
+                System.out.println("What is the color of the animal?");
+                userInput = scanner.nextLine();
+                animal.setColor(userInput);
+                System.out.println("The animal has been updated.  The new name is:  " + animal.getColor());
+                break;
+            case "4":
+                System.out.println("What is the age of the animal?");
+                userInput = scanner.nextLine();
+                animal.setAge(userInput);
+                System.out.println("The animal has been updated.  The new name is:  " + animal.getAge());
+                break;
+            case "5":
+                System.out.println("What is the status of the animal? eg, Available, Adoption Pending, Foster Care, " +
+                        "Adopted.");
+                userInput = scanner.nextLine();
+                animal.setStatus(userInput);
+                System.out.println("The animal has been updated.  The new status is:  " + animal.getStatus());
+                break;
+            default:
+                System.out.println("We couldn't find that selection. Please try again.");
+                break;
+        }
+
+    }
+
+    public void animalsByStatus(String status) {
         for (int i = 0; i < animals.size(); i++) {
-            if(status.equalsIgnoreCase(animals.get(i).getStatus())){
+            if (status.equalsIgnoreCase(animals.get(i).getStatus())) {
                 System.out.println("Below are the animals with a status: ");
                 animals.get(i).printDetails();
             } else {
@@ -43,10 +89,10 @@ public class Shelter {
         }
     }
 
-    public void animalsByLengthOfStay(){
+    public void animalsByLengthOfStay() {
         System.out.println("The animals that have been here 6 months or longer are: ");
         for (int i = 0; i < animals.size(); i++) {
-            if(animals.get(i).getLengthOfStay() >= 6) {
+            if (animals.get(i).getLengthOfStay() >= 6) {
                 animals.get(i).printDetails();
             }
         }
@@ -76,7 +122,7 @@ public class Shelter {
     public void addAnAnimal(Animal animal) {
 
         //TODO Need to figure out why this isn't working as expected.  (Off by one)
-        if(animals.size() < 75  && this.bank > 5000) {
+        if (animals.size() < 75 && this.bank > 5000) {
             System.out.println("The size of the array is:  " + animals.size());
             animal.setIdNumber(idNumber.incrementer());
             animals.add(animal);
