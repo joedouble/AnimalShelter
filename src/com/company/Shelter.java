@@ -20,8 +20,24 @@ public class Shelter {
 //        Animal foundAnimal
 //    }
 
-    public void animalsByStatus(){
+    public void animalsByStatus(String status){
+        for (int i = 0; i < animals.size(); i++) {
+            if(status.equalsIgnoreCase(animals.get(i).getStatus())){
+                System.out.println("Below are the animals with a status: ");
+                animals.get(i).printDetails();
+            } else {
+                System.out.println("Sorry.  We couldn't find any animals with that status.");
+            }
+        }
+    }
 
+    public void animalsByDate(){
+        System.out.println("The animals that have been here 6 months or longer are: ");
+        for (int i = 0; i < animals.size(); i++) {
+            if(animals.get(i).getLengthOfStay() >= 6) {
+                animals.get(i).printDetails();
+            }
+        }
     }
 
 
