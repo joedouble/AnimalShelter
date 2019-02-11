@@ -7,10 +7,22 @@ public class Shelter {
     private ArrayList<Animal> animals;
     private Animal foundAnimal;
     private IDNumber idNumber = new IDNumber();
+    private int bank;
 
 
     public Shelter() {
         this.animals = new ArrayList<Animal>();
+        this.bank = 150000;
+    }
+
+    public void decreaseBy5000(){
+        bank-=5000;
+        System.out.println("The bank balance is:  " + this.bank);
+    }
+
+    public void addBy5000(){
+        bank+=5000;
+        System.out.println("The bank balance is:  " + this.bank);
     }
 
     //TODO Work on editing animal.
@@ -62,10 +74,19 @@ public class Shelter {
     }
 
     public void addAnAnimal(Animal animal) {
-        animal.setIdNumber(idNumber.incrementer());
-        animals.add(animal);
-        System.out.println("You've added a(n) to the shelter:  " + animal.getName());
-        System.out.println(animals.size());
+
+        //TODO Need to figure out why this isn't working as expected.  (Off by one)
+        if(animals.size() < 75  && this.bank > 5000) {
+            System.out.println("The size of the array is:  " + animals.size());
+            animal.setIdNumber(idNumber.incrementer());
+            animals.add(animal);
+            System.out.println("You've added a(n) to the shelter:  " + animal.getName());
+            System.out.println("The new size of the array is " + animals.size());
+            System.out.println(animals);
+            decreaseBy5000();
+        } else {
+            System.out.println("We're out of space.  We can't take any more animals.");
+        }
 
     }
 
@@ -75,10 +96,18 @@ public class Shelter {
                 Animal removedAnimal = animals.remove(i);
                 System.out.println("You just removed an animal from the shelter.  The information is:  " + removedAnimal);
                 showAllAnimals();
+                addBy5000();
             } else {
                 System.out.println("Sorry.  Couldn't find that animal in the shelter.");
             }
         }
     }
 
+    public int getBank() {
+        return bank;
+    }
+
+    public void setBank(int bank) {
+        this.bank = bank;
+    }
 }

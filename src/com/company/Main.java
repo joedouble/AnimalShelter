@@ -15,9 +15,7 @@ public class Main {
         myShelter.addAnAnimal(rabbit);
         myShelter.addAnAnimal(cat);
 
-        myShelter.animalsByStatus("Adopted");
-
-        myShelter.animalsByLengthOfStay();
+        myShelter.removeAnimal(1);
 
     }
 }
