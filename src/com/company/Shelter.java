@@ -31,7 +31,7 @@ public class Shelter {
         }
     }
 
-    public void animalsByDate(){
+    public void animalsByLengthOfStay(){
         System.out.println("The animals that have been here 6 months or longer are: ");
         for (int i = 0; i < animals.size(); i++) {
             if(animals.get(i).getLengthOfStay() >= 6) {

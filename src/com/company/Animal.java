@@ -21,7 +21,7 @@ public class Animal {
         this.age = age;
         this.arrivalDate = arrivalDate;
         this.status = status;
-        this.lengthOfStay = 0;
+        this.lengthOfStay = lengthOfStay;
     }
 
     public void printDetails(){
