@@ -12,9 +12,8 @@ public class Animal {
     private String status;
     private int lengthOfStay;
 
-    public Animal(int idNumber, String name, String typeOfAnimal, String breed, String color, String age,
-                  String arrivalDate, String status) {
-        this.idNumber = idNumber;
+    public Animal(String name, String typeOfAnimal, String breed, String color, String age,
+                  String arrivalDate, String status, int lengthOfStay) {
         this.name = name;
         this.typeOfAnimal = typeOfAnimal;
         this.breed = breed;
@@ -35,6 +34,21 @@ public class Animal {
                 "The arrival date of the animal is:  " + this.arrivalDate +
                 "The status of the animal is:  " + this.status +
                 "The length of stay is:  " + this.lengthOfStay + " months.");
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "idNumber=" + idNumber +
+                ", name='" + name + '\'' +
+                ", typeOfAnimal='" + typeOfAnimal + '\'' +
+                ", breed='" + breed + '\'' +
+                ", color='" + color + '\'' +
+                ", age='" + age + '\'' +
+                ", arrivalDate='" + arrivalDate + '\'' +
+                ", status='" + status + '\'' +
+                ", lengthOfStay=" + lengthOfStay +
+                '}';
     }
 
     public int getIdNumber() {
