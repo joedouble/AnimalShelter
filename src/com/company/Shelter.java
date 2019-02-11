@@ -13,6 +13,18 @@ public class Shelter {
         this.animals = new ArrayList<Animal>();
     }
 
+    //TODO Work on editing animal.
+//    public void editAnimal(Animal animal){
+//        System.out.println("Would you like");
+//
+//        Animal foundAnimal
+//    }
+
+    public void animalsByStatus(){
+
+    }
+
+
     public Animal searchByID(int idNumber) {
         for (int i = 0; i < animals.size(); i++) {
             if (idNumber == animals.get(i).getIdNumber()) {

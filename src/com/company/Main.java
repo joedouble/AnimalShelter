@@ -16,8 +16,8 @@ public class Main {
 
         myShelter.showAllAnimals();
 
-        myShelter.removeAnimal(1);
+        myShelter.searchByID(1);
 
-        myShelter.showAllAnimals();
+
     }
 }

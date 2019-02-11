@@ -26,14 +26,14 @@ public class Animal {
 
     public void printDetails(){
         System.out.println("The animal ID number is: " + this.idNumber +
-                "The animal name is: " + this.name +
-                "The type of animal is:  " + this.typeOfAnimal +
-                "The breed of the animal is:  " + this.breed +
-                "The color of the animal is:  " + this.color +
-                "The age of the animal is:  " + this.age +
-                "The arrival date of the animal is:  " + this.arrivalDate +
-                "The status of the animal is:  " + this.status +
-                "The length of stay is:  " + this.lengthOfStay + " months.");
+                "\nThe animal name is: " + this.name +
+                "\nThe type of animal is:  " + this.typeOfAnimal +
+                "\nThe breed of the animal is:  " + this.breed +
+                "\nThe color of the animal is:  " + this.color +
+                "\nThe age of the animal is:  " + this.age +
+                "\nThe arrival date of the animal is:  " + this.arrivalDate +
+                "\nThe status of the animal is:  " + this.status +
+                "\nThe length of stay is:  " + this.lengthOfStay + " months.");
     }
 
     @Override
