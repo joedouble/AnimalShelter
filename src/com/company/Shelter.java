@@ -104,7 +104,8 @@ public class Shelter {
     }
 
     public int getBank() {
-        return bank;
+        System.out.println(this.bank);
+        return this.bank;
     }
 
     public void setBank(int bank) {
