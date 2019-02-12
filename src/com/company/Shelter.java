@@ -1,7 +1,13 @@
 package com.company;
 
+import com.sun.scenario.animation.shared.AnimationAccessor;
+
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
+
+import static java.util.Collections.sort;
 
 public class Shelter {
 
@@ -109,8 +115,10 @@ public class Shelter {
     public void animalsByLengthOfStay() {
         System.out.println("The animals that have been here 6 months or longer are: ");
         for (int i = 0; i < animals.size(); i++) {
-            if (animals.get(i).getLengthOfStay() >= 6) {
+            int lengthOfStayInInt = Integer.parseInt(animals.get(i).getLengthOfStay());
+            if (lengthOfStayInInt >= 6) {
                 animals.get(i).printDetails();
+                System.out.println("-----");
             }
         }
     }
@@ -124,7 +132,6 @@ public class Shelter {
             if (userInputInt == animals.get(i).getIdNumber()) {
                 System.out.println("Here's the animal you're looking for:  ");
                 foundAnimal = animals.get(i);
-                System.out.println("This is foundAnimal:  " + foundAnimal);
             } else {
                 System.out.println("Sorry.  Couldn't find that animal in the shelter.");
             }
@@ -135,6 +142,25 @@ public class Shelter {
         if (userInput.equalsIgnoreCase("y")) {
             editAnimal(foundAnimal);
         }
+    }
+
+    public Comparator<Animal> animalComparatorByName = new Comparator<Animal>() {
+        @Override
+        public int compare(Animal o1, Animal o2) {
+            String animalName1 = o1.getName().toUpperCase();
+            String animalName2 = o2.getName().toUpperCase();
+            return animalName1.compareTo(animalName2);
+        }
+    };
+
+    public void sortedListByName(){
+        Collections.sort(animals, animalComparatorByName);
+        for(Animal animal: animals) {
+            System.out.println("The name of animal is:  " + animal.getName() +
+                    " The type of the animal is:  " + animal.getTypeOfAnimal() +
+                    " The breed of the animal is:  " + animal.getBreed());
+        }
+
     }
 
     public void showAllAnimals() {
@@ -172,7 +198,7 @@ public class Shelter {
             String tempStatus = scanner.nextLine();
 
             System.out.println("What is the length of stay of the animal?");
-            int tempLengthOfStay = scanner.nextInt();
+            String tempLengthOfStay = scanner.nextLine();
 
             tempAnimal = new Animal(tempName, tempType, tempBreed, tempColor, tempAge, tempArrivalDate,
                     tempStatus, tempLengthOfStay);
@@ -204,8 +230,8 @@ public class Shelter {
     }
 
     public void createInitialAnimals() {
-        Animal dog = new Animal("Jeffrey", "Dog", "Husky", "Brown", "2", "11/20/2018", "Adopted", 6);
-        Animal cat = new Animal("Karen", "Cat", "Longhaired", "Calico", "5", "12/25/2018", "Available", 2);
+        Animal dog = new Animal("Jeffrey", "Dog", "Husky", "Brown", "2", "11/20/2018", "Adopted", "7");
+        Animal cat = new Animal("Karen", "Cat", "Longhaired", "Calico", "5", "12/25/2018", "Available", "2");
         dog.setIdNumber(1);
         animals.add(dog);
         cat.setIdNumber(2);

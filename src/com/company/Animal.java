@@ -10,10 +10,10 @@ public class Animal {
     private String age;
     private String arrivalDate;
     private String status;
-    private int lengthOfStay;
+    private String lengthOfStay;
 
     public Animal(String name, String typeOfAnimal, String breed, String color, String age,
-                  String arrivalDate, String status, int lengthOfStay) {
+                  String arrivalDate, String status, String lengthOfStay) {
         this.name = name;
         this.typeOfAnimal = typeOfAnimal;
         this.breed = breed;
@@ -115,11 +115,11 @@ public class Animal {
         this.status = status;
     }
 
-    public int getLengthOfStay() {
+    public String getLengthOfStay() {
         return lengthOfStay;
     }
 
-    public void setLengthOfStay(int lengthOfStay) {
+    public void setLengthOfStay(String lengthOfStay) {
         this.lengthOfStay = lengthOfStay;
     }
 }

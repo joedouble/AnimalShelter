@@ -19,8 +19,10 @@ public class Start {
             System.out.println("[2] Search for animals by ID number.\n");
             System.out.println("[3] Search for animals by their status eg, Available, Adoption Pending, Foster Care, " +
                     "Adopted.\n");
-            System.out.println("[4] Add an animal to the shelter.\n");
-            System.out.println("[5] Remove an animal from the shelter.\n");
+            System.out.println("[4] View animals here longer than 6 months.\n");
+            System.out.println("[5] View animals sorted by name.\n");
+            System.out.println("[6] Add an animal to the shelter.\n");
+            System.out.println("[7] Remove an animal from the shelter.\n");
 
             userInput = scanner.nextLine();
 
@@ -41,9 +43,15 @@ public class Start {
                     shelter.animalsByStatus(userInput);
                     break;
                 case "4":
-                    shelter.addAnAnimal();
+                    shelter.animalsByLengthOfStay();
                     break;
                 case "5":
+                    shelter.sortedListByName();
+                    break;
+                case "6":
+                    shelter.addAnAnimal();
+                    break;
+                case "7":
                     System.out.println("Here are all of the animals in the shelter.\n");
                     shelter.showAllAnimals();
                     System.out.println("Please enter the ID number of the animal you'd like to remove.\n");
