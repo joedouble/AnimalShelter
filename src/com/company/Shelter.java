@@ -34,58 +34,65 @@ public class Shelter {
     }
 
     public void editAnimal(Animal animal) {
-        animal.printDetails();
-        System.out.println("what value would you like to edit of this animal.\n" +
-                "[1] Name\n" +
-                "[2] Breed\n" +
-                "[3] Color\n" +
-                "[4] Age\n" +
-                "[5] Status\n");
-        userInput = scanner.next();
+        boolean keepRunning = true;
+        do {
+            animal.printDetails();
+            System.out.println("what value would you like to edit of this animal.\n" +
+                    "[1] Name\n" +
+                    "[2] Breed\n" +
+                    "[3] Color\n" +
+                    "[4] Age\n" +
+                    "[5] Status\n");
+            userInput = scanner.next();
 
-        switch (userInput) {
-            case "1":
-                System.out.println("What would you like the new name to be?");
-                scanner.nextLine();
-                userInput = scanner.nextLine();
-                animal.setName(userInput);
-                System.out.println("User input after setName:  " + userInput);
-                System.out.println("The animal has been updated.  The new name is:  " + animal.getName());
-                break;
-            case "2":
-                System.out.println("What is the breed of the animal?");
-                scanner.nextLine();
-                userInput = scanner.nextLine();
-                animal.setBreed(userInput);
-                System.out.println("The animal has been updated.  The new breed is:  " + animal.getBreed());
-                break;
-            case "3":
-                System.out.println("What is the color of the animal?");
-                scanner.nextLine();
-                userInput = scanner.nextLine();
-                animal.setColor(userInput);
-                System.out.println("The animal has been updated.  The new name is:  " + animal.getColor());
-                break;
-            case "4":
-                System.out.println("What is the age of the animal?");
-                scanner.nextLine();
-                userInput = scanner.nextLine();
-                animal.setAge(userInput);
-                System.out.println("The animal has been updated.  The new name is:  " + animal.getAge());
-                break;
-            case "5":
-                System.out.println("What is the status of the animal? eg, Available, Adoption Pending, Foster Care, " +
-                        "Adopted.");
-                scanner.nextLine();
-                userInput = scanner.nextLine();
-                animal.setStatus(userInput);
-                System.out.println("The animal has been updated.  The new status is:  " + animal.getStatus());
-                break;
-            default:
-                System.out.println("We couldn't find that selection. Please try again.");
-                break;
-        }
+            switch (userInput) {
+                case "1":
+                    System.out.println("What would you like the new name to be?");
+                    scanner.nextLine();
+                    userInput = scanner.nextLine();
+                    animal.setName(userInput);
+                    System.out.println("User input after setName:  " + userInput);
+                    System.out.println("The animal has been updated.  The new name is:  " + animal.getName());
+                    break;
+                case "2":
+                    System.out.println("What is the breed of the animal?");
+                    scanner.nextLine();
+                    userInput = scanner.nextLine();
+                    animal.setBreed(userInput);
+                    System.out.println("The animal has been updated.  The new breed is:  " + animal.getBreed());
+                    break;
+                case "3":
+                    System.out.println("What is the color of the animal?");
+                    scanner.nextLine();
+                    userInput = scanner.nextLine();
+                    animal.setColor(userInput);
+                    System.out.println("The animal has been updated.  The new name is:  " + animal.getColor());
+                    break;
+                case "4":
+                    System.out.println("What is the age of the animal?");
+                    scanner.nextLine();
+                    userInput = scanner.nextLine();
+                    animal.setAge(userInput);
+                    System.out.println("The animal has been updated.  The new name is:  " + animal.getAge());
+                    break;
+                case "5":
+                    System.out.println("What is the status of the animal? eg, Available, Adoption Pending, Foster Care, " +
+                            "Adopted.");
+                    scanner.nextLine();
+                    userInput = scanner.nextLine();
+                    animal.setStatus(userInput);
+                    System.out.println("The animal has been updated.  The new status is:  " + animal.getStatus());
+                    break;
+                default:
+                    System.out.println("We couldn't find that selection. Please try again.");
+                    break;
+            }
+            System.out.println("Would you like to edit another value for this animal? [y] or [n]");
+            userInput = scanner.next();
 
+            keepRunning = userInput.equalsIgnoreCase("y") ? true : false;
+
+        } while(keepRunning);
     }
 
     public void animalsByStatus(String status) {
@@ -214,7 +221,9 @@ public class Shelter {
     public void createInitialAnimals(){
         Animal dog = new Animal("Jeffrey", "Dog", "Husky", "Brown", "2", "11/20/2018", "Adopted", 6);
         Animal cat = new Animal("Karen", "Cat", "Longhaired", "Calico", "5", "12/25/2018", "Available", 2 );
+        dog.setIdNumber(1);
         animals.add(dog);
+        cat.setIdNumber(2);
         animals.add(cat);
     }
 }

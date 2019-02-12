@@ -2,7 +2,7 @@ package com.company;
 
 public class IDNumber {
 
-    private int idNumber = 0;
+    private int idNumber = 3;
 
     public int incrementer(){
         idNumber++;
