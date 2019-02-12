@@ -14,6 +14,7 @@ public class Shelter {
     private int userInputInt;
     private final static int MAX_NUMBER_OF_ANIMALS = 2;
     private final static int MIN_BUDGET = 5000;
+    private Animal tempAnimal;
 
 
 
@@ -122,16 +123,46 @@ public class Shelter {
         }
     }
 
-    public void addAnAnimal(Animal animal) {
+    public void addAnAnimal() {
 
         if (animals.size() + 1 < MAX_NUMBER_OF_ANIMALS && this.bank > MIN_BUDGET) {
+            System.out.println("You've chosen to add an animal to the shelter.\n");
+
+            System.out.println("What would you like the new name to be?");
+            String tempName = scanner.nextLine();
+
+            System.out.println("What type of animal is it?");
+            String tempType = scanner.nextLine();
+
+            System.out.println("What is the breed of the animal?");
+            String tempBreed = scanner.nextLine();
+
+            System.out.println("What is the color of the animal?");
+            String tempColor = scanner.nextLine();
+
+            System.out.println("What is the age of the animal?");
+            String tempAge = scanner.nextLine();
+
+            System.out.println("What is the arrival date of the animal? Use MM/DD/YYYY format.");
+            String tempArrivalDate = scanner.nextLine();
+
+            System.out.println("What is the status of the animal?");
+            String tempStatus = scanner.nextLine();
+
+            System.out.println("What is the length of stay of the animal?");
+            int tempLengthOfStay = scanner.nextInt();
+
+            tempAnimal = new Animal(tempName, tempType, tempBreed, tempColor, tempAge, tempArrivalDate,
+                    tempStatus, tempLengthOfStay);
+
             System.out.println("The size of the array is:  " + animals.size());
-            animal.setIdNumber(idNumber.incrementer());
-            animals.add(animal);
-            System.out.println("You've added a(n) to the shelter:  " + animal.getName());
+            tempAnimal.setIdNumber(idNumber.incrementer());
+            animals.add(tempAnimal);
+            System.out.println("You've added a(n) to the shelter:  " + tempAnimal.getName());
             System.out.println("The new size of the array is " + animals.size());
             System.out.println(animals);
             decreaseBy5000();
+
         } else {
             System.out.println("We're out of space.  We can't take any more animals.");
         }

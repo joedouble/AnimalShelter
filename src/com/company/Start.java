@@ -55,36 +55,7 @@ public class Start {
 
                     break;
                 case "4":
-                    System.out.println("You've chosen to add an animal to the shelter.\n");
-
-                    System.out.println("What would you like the new name to be?");
-                    String tempName = scanner.nextLine();
-
-                    System.out.println("What type of animal is it?");
-                    String tempType = scanner.nextLine();
-
-                    System.out.println("What is the breed of the animal?");
-                    String tempBreed = scanner.nextLine();
-
-                    System.out.println("What is the color of the animal?");
-                    String tempColor = scanner.nextLine();
-
-                    System.out.println("What is the age of the animal?");
-                    String tempAge = scanner.nextLine();
-
-                    System.out.println("What is the arrival date of the animal? Use MM/DD/YYYY format.");
-                    String tempArrivalDate = scanner.nextLine();
-
-                    System.out.println("What is the status of the animal?");
-                    String tempStatus = scanner.nextLine();
-
-                    System.out.println("What is the length of stay of the animal?");
-                    int tempLengthOfStay = scanner.nextInt();
-
-                    tempAnimal = new Animal(tempName, tempType, tempBreed, tempColor, tempAge, tempArrivalDate,
-                            tempStatus, tempLengthOfStay);
-
-                    shelter.addAnAnimal(tempAnimal);
+                    shelter.addAnAnimal();
 
                     break;
                 case "5":
