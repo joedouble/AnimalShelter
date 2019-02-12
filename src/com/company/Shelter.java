@@ -12,10 +12,9 @@ public class Shelter {
     private Scanner scanner = new Scanner(System.in);
     private String userInput;
     private int userInputInt;
-    private final static int MAX_NUMBER_OF_ANIMALS = 2;
+    private final static int MAX_NUMBER_OF_ANIMALS = 75;
     private final static int MIN_BUDGET = 5000;
     private Animal tempAnimal;
-
 
 
     public Shelter() {
@@ -41,29 +40,34 @@ public class Shelter {
                 "[3] Color\n" +
                 "[4] Age\n" +
                 "[5] Status\n");
-        userInput = scanner.nextLine();
+        userInput = scanner.next();
 
         switch (userInput) {
             case "1":
                 System.out.println("What would you like the new name to be?");
+                scanner.nextLine();
                 userInput = scanner.nextLine();
                 animal.setName(userInput);
+                System.out.println("User input after setName:  " + userInput);
                 System.out.println("The animal has been updated.  The new name is:  " + animal.getName());
                 break;
             case "2":
                 System.out.println("What is the breed of the animal?");
+                scanner.nextLine();
                 userInput = scanner.nextLine();
                 animal.setBreed(userInput);
                 System.out.println("The animal has been updated.  The new breed is:  " + animal.getBreed());
                 break;
             case "3":
                 System.out.println("What is the color of the animal?");
+                scanner.nextLine();
                 userInput = scanner.nextLine();
                 animal.setColor(userInput);
                 System.out.println("The animal has been updated.  The new name is:  " + animal.getColor());
                 break;
             case "4":
                 System.out.println("What is the age of the animal?");
+                scanner.nextLine();
                 userInput = scanner.nextLine();
                 animal.setAge(userInput);
                 System.out.println("The animal has been updated.  The new name is:  " + animal.getAge());
@@ -71,6 +75,7 @@ public class Shelter {
             case "5":
                 System.out.println("What is the status of the animal? eg, Available, Adoption Pending, Foster Care, " +
                         "Adopted.");
+                scanner.nextLine();
                 userInput = scanner.nextLine();
                 animal.setStatus(userInput);
                 System.out.println("The animal has been updated.  The new status is:  " + animal.getStatus());
@@ -103,18 +108,28 @@ public class Shelter {
     }
 
 
-    public Animal searchByID(int idNumber) {
+    public void searchByID() {
+        System.out.println("You've chosen to search for an animal by ID.\n");
+        System.out.println("Please enter the ID number of the animal you'd like to view.\n");
+        userInputInt = scanner.nextInt();
+
         for (int i = 0; i < animals.size(); i++) {
-            if (idNumber == animals.get(i).getIdNumber()) {
+            if (userInputInt == animals.get(i).getIdNumber()) {
                 System.out.println("Here's the animal you're looking for:  ");
                 foundAnimal = animals.get(i);
-                showAllAnimals();
+                System.out.println("This is foundAnimal:  " + foundAnimal);
             } else {
                 System.out.println("Sorry.  Couldn't find that animal in the shelter.");
             }
 
         }
-        return foundAnimal;
+
+        System.out.println("Would you like to edit this animal? [Y] or [N]\n");
+        userInput = scanner.next();
+
+        if (userInput.equalsIgnoreCase("y")) {
+            editAnimal(foundAnimal);
+        }
     }
 
     public void showAllAnimals() {
@@ -124,11 +139,11 @@ public class Shelter {
     }
 
     public void addAnAnimal() {
-
         if (animals.size() + 1 < MAX_NUMBER_OF_ANIMALS && this.bank > MIN_BUDGET) {
             System.out.println("You've chosen to add an animal to the shelter.\n");
 
             System.out.println("What would you like the new name to be?");
+            scanner.next();
             String tempName = scanner.nextLine();
 
             System.out.println("What type of animal is it?");

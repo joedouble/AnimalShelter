@@ -31,18 +31,19 @@ public class Start {
                     shelter.showAllAnimals();
                     break;
                 case "2":
-                    System.out.println("You've chosen to search for an animal by ID.\n");
-                    System.out.println("Please enter the ID number of the animal you'd like to view.\n");
-                    userInputInt = scanner.nextInt();
-
-                    tempAnimal = shelter.searchByID(userInputInt);
-
-                    System.out.println("Would you like to edit this animal? [Y] or [N]\n");
-                    userInput = scanner.nextLine();
-
-                    if (userInput.equalsIgnoreCase("y")) {
-                        shelter.editAnimal(tempAnimal);
-                    }
+                    shelter.searchByID();
+//                    System.out.println("You've chosen to search for an animal by ID.\n");
+//                    System.out.println("Please enter the ID number of the animal you'd like to view.\n");
+//                    userInputInt = scanner.nextInt();
+//
+//                    tempAnimal = shelter.searchByID(userInputInt);
+//
+//                    System.out.println("Would you like to edit this animal? [Y] or [N]\n");
+//                    userInput = scanner.nextLine();
+//
+//                    if (userInput.equalsIgnoreCase("y")) {
+//                        shelter.editAnimal(tempAnimal);
+//                    }
 
                     break;
                 case "3":
