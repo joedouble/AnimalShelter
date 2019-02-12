@@ -35,27 +35,21 @@ public class Start {
                     break;
                 case "3":
                     System.out.println("You've chosen to search for a(n) animal(s) by its status.\n");
-                    System.out.println("Please enter the status of the animal eg, Available, Adoption Pending, Foster " +
+                    System.out.println("Please enter the status of the animal eg, Available, Adoption Pending, Foster" +
                             "Care, Adopted\n");
                     userInput = scanner.nextLine();
-
                     shelter.animalsByStatus(userInput);
-
                     break;
                 case "4":
                     shelter.addAnAnimal();
-
                     break;
                 case "5":
                     System.out.println("Here are all of the animals in the shelter.\n");
                     shelter.showAllAnimals();
                     System.out.println("Please enter the ID number of the animal you'd like to remove.\n");
                     userInputInt = scanner.nextInt();
-
                     shelter.removeAnimal(userInputInt);
-
                     break;
-
             }
         } while (true);
     }

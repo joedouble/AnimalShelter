@@ -4,7 +4,7 @@ public class IDNumber {
 
     private int idNumber = 3;
 
-    public int incrementer(){
+    public int incrementer() {
         idNumber++;
         return this.idNumber;
     }

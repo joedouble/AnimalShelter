@@ -16,7 +16,6 @@ public class Shelter {
     private final static int MIN_BUDGET = 5000;
     private Animal tempAnimal;
 
-
     public Shelter() {
         this.animals = new ArrayList<Animal>();
         this.bank = 150000;
@@ -76,7 +75,8 @@ public class Shelter {
                     System.out.println("The animal has been updated.  The new name is:  " + animal.getAge());
                     break;
                 case "5":
-                    System.out.println("What is the status of the animal? eg, Available, Adoption Pending, Foster Care, " +
+                    System.out.println("What is the status of the animal? eg, Available, Adoption Pending, Foster " +
+                            "Care, " +
                             "Adopted.");
                     scanner.nextLine();
                     userInput = scanner.nextLine();
@@ -92,7 +92,7 @@ public class Shelter {
 
             keepRunning = userInput.equalsIgnoreCase("y") ? true : false;
 
-        } while(keepRunning);
+        } while (keepRunning);
     }
 
     public void animalsByStatus(String status) {
@@ -115,7 +115,6 @@ public class Shelter {
         }
     }
 
-
     public void searchByID() {
         System.out.println("You've chosen to search for an animal by ID.\n");
         System.out.println("Please enter the ID number of the animal you'd like to view.\n");
@@ -129,12 +128,10 @@ public class Shelter {
             } else {
                 System.out.println("Sorry.  Couldn't find that animal in the shelter.");
             }
-
         }
 
         System.out.println("Would you like to edit this animal? [Y] or [N]\n");
         userInput = scanner.next();
-
         if (userInput.equalsIgnoreCase("y")) {
             editAnimal(foundAnimal);
         }
@@ -142,6 +139,7 @@ public class Shelter {
 
     public void showAllAnimals() {
         for (Animal animals : animals) {
+            System.out.println("-----");
             animals.printDetails();
         }
     }
@@ -169,7 +167,8 @@ public class Shelter {
             System.out.println("What is the arrival date of the animal? Use MM/DD/YYYY format.");
             String tempArrivalDate = scanner.nextLine();
 
-            System.out.println("What is the status of the animal? eg, Available, Adoption Pending, Foster Care, Adopted.\n");
+            System.out.println("What is the status of the animal? eg, Available, Adoption Pending, Foster Care, " +
+                    "Adopted.\n");
             String tempStatus = scanner.nextLine();
 
             System.out.println("What is the length of stay of the animal?");
@@ -189,7 +188,6 @@ public class Shelter {
         } else {
             System.out.println("We're out of space.  We can't take any more animals.");
         }
-
     }
 
     public void removeAnimal(int idNumber) {
@@ -205,6 +203,15 @@ public class Shelter {
         }
     }
 
+    public void createInitialAnimals() {
+        Animal dog = new Animal("Jeffrey", "Dog", "Husky", "Brown", "2", "11/20/2018", "Adopted", 6);
+        Animal cat = new Animal("Karen", "Cat", "Longhaired", "Calico", "5", "12/25/2018", "Available", 2);
+        dog.setIdNumber(1);
+        animals.add(dog);
+        cat.setIdNumber(2);
+        animals.add(cat);
+    }
+
     public int getBank() {
         System.out.println(this.bank);
         return this.bank;
@@ -216,14 +223,5 @@ public class Shelter {
 
     public static int getMaxNumberOfAnimals() {
         return MAX_NUMBER_OF_ANIMALS;
-    }
-
-    public void createInitialAnimals(){
-        Animal dog = new Animal("Jeffrey", "Dog", "Husky", "Brown", "2", "11/20/2018", "Adopted", 6);
-        Animal cat = new Animal("Karen", "Cat", "Longhaired", "Calico", "5", "12/25/2018", "Available", 2 );
-        dog.setIdNumber(1);
-        animals.add(dog);
-        cat.setIdNumber(2);
-        animals.add(cat);
     }
 }

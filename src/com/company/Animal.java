@@ -24,7 +24,7 @@ public class Animal {
         this.lengthOfStay = lengthOfStay;
     }
 
-    public void printDetails(){
+    public void printDetails() {
         System.out.println("The animal ID number is: " + this.idNumber +
                 "\nThe animal name is: " + this.name +
                 "\nThe type of animal is:  " + this.typeOfAnimal +
