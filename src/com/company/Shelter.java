@@ -20,6 +20,7 @@ public class Shelter {
     public Shelter() {
         this.animals = new ArrayList<Animal>();
         this.bank = 150000;
+        createInitialAnimals();
     }
 
     public void decreaseBy5000() {
@@ -161,7 +162,7 @@ public class Shelter {
             System.out.println("What is the arrival date of the animal? Use MM/DD/YYYY format.");
             String tempArrivalDate = scanner.nextLine();
 
-            System.out.println("What is the status of the animal?");
+            System.out.println("What is the status of the animal? eg, Available, Adoption Pending, Foster Care, Adopted.\n");
             String tempStatus = scanner.nextLine();
 
             System.out.println("What is the length of stay of the animal?");
@@ -208,5 +209,12 @@ public class Shelter {
 
     public static int getMaxNumberOfAnimals() {
         return MAX_NUMBER_OF_ANIMALS;
+    }
+
+    public void createInitialAnimals(){
+        Animal dog = new Animal("Jeffrey", "Dog", "Husky", "Brown", "2", "11/20/2018", "Adopted", 6);
+        Animal cat = new Animal("Karen", "Cat", "Longhaired", "Calico", "5", "12/25/2018", "Available", 2 );
+        animals.add(dog);
+        animals.add(cat);
     }
 }
