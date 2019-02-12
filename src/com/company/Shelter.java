@@ -12,6 +12,9 @@ public class Shelter {
     private Scanner scanner = new Scanner(System.in);
     private String userInput;
     private int userInputInt;
+    private final static int MAX_NUMBER_OF_ANIMALS = 2;
+    private final static int MIN_BUDGET = 5000;
+
 
 
     public Shelter() {
@@ -121,8 +124,7 @@ public class Shelter {
 
     public void addAnAnimal(Animal animal) {
 
-        //TODO Need to figure out why this isn't working as expected.  (Off by one)
-        if (animals.size() < 75 && this.bank > 5000) {
+        if (animals.size() + 1 < MAX_NUMBER_OF_ANIMALS && this.bank > MIN_BUDGET) {
             System.out.println("The size of the array is:  " + animals.size());
             animal.setIdNumber(idNumber.incrementer());
             animals.add(animal);
@@ -156,5 +158,9 @@ public class Shelter {
 
     public void setBank(int bank) {
         this.bank = bank;
+    }
+
+    public static int getMaxNumberOfAnimals() {
+        return MAX_NUMBER_OF_ANIMALS;
     }
 }
