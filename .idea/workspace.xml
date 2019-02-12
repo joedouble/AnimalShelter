@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5258f537-3eb9-4d95-aeaf-05d78443516b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AnimalShelter/com/company/Animal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnimalShelter/com/company/Animal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AnimalShelter/com/company/Shelter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnimalShelter/com/company/Shelter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AnimalShelter/com/company/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnimalShelter/com/company/Start.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Shelter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Shelter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Start.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,8 +53,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Shelter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="860">
-              <caret line="163" column="5" selection-start-line="163" selection-start-column="5" selection-end-line="163" selection-end-column="5" />
+            <state relative-caret-position="332">
+              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#9758#9759#0" expanded="true" />
@@ -139,7 +134,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550005737293" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550005863457" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -181,12 +176,12 @@
       <option name="presentableId" value="Default" />
       <updated>1549908640160</updated>
       <workItem from="1549908641493" duration="12858000" />
-      <workItem from="1549983300719" duration="10398000" />
+      <workItem from="1549983300719" duration="10524000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23256000" />
+    <option name="totallyTimeSpent" value="23382000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
@@ -308,8 +303,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Shelter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="860">
-          <caret line="163" column="5" selection-start-line="163" selection-start-column="5" selection-end-line="163" selection-end-column="5" />
+        <state relative-caret-position="332">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#9758#9759#0" expanded="true" />
